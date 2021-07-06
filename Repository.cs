@@ -24,8 +24,14 @@ namespace Kwiaciarnia
 
         public List<Places> GetPlaces()
         {
-            var list = new List<Places>();
-            return list;
+            string sql = "SELECT * FROM Places";
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var list = new List<Places>();
+                return list;
+            }
+            
         }
 
         public List<Requirements> GetRequirements()
