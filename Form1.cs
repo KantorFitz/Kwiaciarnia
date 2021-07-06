@@ -41,5 +41,9 @@ namespace Kwiaciarnia
             cbTrait.Items.AddRange(traits.ToArray());
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

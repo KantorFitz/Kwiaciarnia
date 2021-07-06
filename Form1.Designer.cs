@@ -41,6 +41,7 @@ namespace Kwiaciarnia
             this.lblSpecie = new System.Windows.Forms.Label();
             this.txtFlowerName = new System.Windows.Forms.TextBox();
             this.lblTrait = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblFlowerName
@@ -144,11 +145,22 @@ namespace Kwiaciarnia
             this.lblTrait.TabIndex = 11;
             this.lblTrait.Text = "Cechy";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(73, 244);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(156, 75);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Dodaj";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1231, 623);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTrait);
             this.Controls.Add(this.txtFlowerName);
             this.Controls.Add(this.cbTrait);
@@ -182,6 +194,7 @@ namespace Kwiaciarnia
         private System.Windows.Forms.Label lblSpecie;
         private System.Windows.Forms.TextBox txtFlowerName;
         private System.Windows.Forms.Label lblTrait;
+        private System.Windows.Forms.Button button1;
     }
 }
 
