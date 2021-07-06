@@ -6,7 +6,24 @@ using System.Threading.Tasks;
 
 namespace Kwiaciarnia
 {
-    class Repository
+    public class Repository
     {
+        public bool AddFlower(Flowers flower)
+        {
+            try
+            {
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public List<Places> GetPlaces()
+        {
+            var list = new List<Places>();
+            return list;
+        }
     }
 }
