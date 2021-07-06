@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dapper;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace Kwiaciarnia
 
             using (var connection = new SqlConnection(_connectionString))
             {
-                var list = new List<Places>();
+                var list = connection.Query<Places>(sql).ToList();
                 return list;
             }
             
