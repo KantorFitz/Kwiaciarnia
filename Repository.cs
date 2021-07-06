@@ -8,6 +8,8 @@ namespace Kwiaciarnia
 {
     public class Repository
     {
+        public string _connectionString = @"Server=THESHADOWMOSES\SQLEXPRESS;Database=Kwiaciarnia;Trusted_Connection=True;";
+
         public bool AddFlower(Flowers flower)
         {
             try
