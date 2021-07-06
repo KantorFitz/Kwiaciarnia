@@ -38,26 +38,46 @@ namespace Kwiaciarnia
 
         public List<Requirements> GetRequirements()
         {
-            var list = new List<Requirements>();
-            return list;
+            string sql = "SELECT * FROM Requirements";
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var list = connection.Query<Requirements>(sql).ToList();
+                return list;
+            }
         }
 
         public List<Sorts> GetSorts()
         {
-            var list = new List<Sorts>();
-            return list;
+            string sql = "SELECT * FROM Sorts";
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var list = connection.Query<Sorts>(sql).ToList();
+                return list;
+            }
         }
 
         public List<Species> GetSpecies()
         {
-            var list = new List<Species>();
-            return list;
+            string sql = "SELECT * FROM Species";
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var list = connection.Query<Species>(sql).ToList();
+                return list;
+            }
         }
 
         public List<Traits> GetTraits()
         {
-            var list = new List<Traits>();
-            return list;
+            string sql = "SELECT * FROM Traits";
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var list = connection.Query<Traits>(sql).ToList();
+                return list;
+            }
         }
     }
 }
