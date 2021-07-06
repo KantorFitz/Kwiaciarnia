@@ -19,6 +19,8 @@ namespace Kwiaciarnia
             InitializeComponent();
 
             _repository = new Repository();
+
+            InitList();
         }
 
         private void InitList()
