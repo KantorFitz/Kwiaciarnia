@@ -43,6 +43,15 @@ namespace Kwiaciarnia
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtFlowerName.Text) ||
+                cbRequirement.SelectedItem == null       ||
+                cbPlace.SelectedItem == null             ||
+                cbSort.SelectedItem == null              ||
+                cbSpecie.SelectedItem == null            ||
+                cbTrait.SelectedItem == null)
+            {
+                return;
+            }
             _repository.AddFlower(new Flowers()
             {
                 Name = txtFlowerName.Text,
