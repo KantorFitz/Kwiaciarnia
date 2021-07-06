@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,24 @@ namespace Kwiaciarnia
         {
             try
             {
-                return true;
+                using (IDbConnection db = new SqlConnection(_connectionString))
+                {
+                    string insertQuery = @"INSERT INTO Flowers (Name, SpeciesId, PlaceId, SortId, RequirementsId, TraitId)
+                                            VALUES (@Name, @SpeciesID, @PlaceId, @SortId, @RequirementsId, @TraitId)";
+
+                    db.Execute(insertQuery, new
+                    {
+                        flower.Name,
+                        flower.SpecieId,
+                        flower.PlaceId,
+                        flower.SortId,
+                        flower.RequirementId,
+                        flower.TraitId
+                    });
+                    return true;
+                }
+
+
             }
             catch (Exception e)
             {
