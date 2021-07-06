@@ -12,9 +12,13 @@ namespace Kwiaciarnia
 {
     public partial class Form1 : Form
     {
+        private Repository _repository;
+
         public Form1()
         {
             InitializeComponent();
+
+            _repository = new Repository();
         }
 
     }
