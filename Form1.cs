@@ -43,7 +43,15 @@ namespace Kwiaciarnia
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            _repository.AddFlower(new Flowers()
+            {
+                Name = txtFlowerName.Text,
+                PlaceId = ((Places)cbPlace.SelectedItem).PlaceId,
+                RequirementId = ((Requirements)cbRequirement.SelectedItem).RequirementId,
+                SortId = ((Sorts)cbSort.SelectedItem).SortId,
+                SpecieId = ((Species)cbSpecie.SelectedItem).SpeciesId,
+                TraitId = ((Traits)cbTrait.SelectedItem).TraitId
+            });
         }
     }
 }
