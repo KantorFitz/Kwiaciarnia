@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "LGounFgdiPbViaZiLAFdUSn8zp06kdHu0fyCol5mqRI6zCKY6qfo3fajiN2ppw9CTUnEDgEj5k3jSspOopNkMA==",
+  "dgSpecHash": "y4xjoiFP1wJCsgNqlzI8l+TAu5XssZ7NyhPX+5VXaG5+fQAl+GEWdhUyEDI/5pYlyuWTxfCFcO1XpVh89UWSYg==",
   "success": true,
   "projectFilePath": "D:\\Programowanie\\Workspace\\WorkspaceC#\\ProgProj\\Kwiaciarnia\\Kwiaciarnia\\Kwiaciarnia.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Kantor\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512"
+  ],
   "logs": []
 }
