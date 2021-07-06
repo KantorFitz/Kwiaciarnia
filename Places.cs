@@ -10,5 +10,10 @@ namespace Kwiaciarnia
     {
         public int PlaceId { get; set; }
         public string Name { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
