@@ -42,6 +42,9 @@ namespace Kwiaciarnia
             this.txtFlowerName = new System.Windows.Forms.TextBox();
             this.lblTrait = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFlowerName
@@ -155,11 +158,33 @@ namespace Kwiaciarnia
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(302, 19);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.Size = new System.Drawing.Size(583, 191);
+            this.dataGridView1.TabIndex = 13;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(302, 244);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(156, 75);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "wczytaj";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(319, 370);
+            this.ClientSize = new System.Drawing.Size(926, 370);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTrait);
             this.Controls.Add(this.txtFlowerName);
@@ -174,7 +199,8 @@ namespace Kwiaciarnia
             this.Controls.Add(this.cbPlace);
             this.Controls.Add(this.lblFlowerName);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Kwiaciarnia";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,6 +221,8 @@ namespace Kwiaciarnia
         private System.Windows.Forms.TextBox txtFlowerName;
         private System.Windows.Forms.Label lblTrait;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

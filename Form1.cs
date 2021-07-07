@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kwiaciarnia;
 
 namespace Kwiaciarnia
 {
@@ -61,6 +63,19 @@ namespace Kwiaciarnia
                 SpecieId = ((Species)cbSpecie.SelectedItem).SpeciesId,
                 TraitId = ((Traits)cbTrait.SelectedItem).TraitId
             });
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection sqlCon = new SqlConnection(@"Server=THESHADOWMOSES\SQLEXPRESS;Database=Kwiaciarnia;Trusted_Connection=True;"))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM Flowers", sqlCon);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+
+                dataGridView1.DataSource = dtbl;
+            }
         }
     }
 }
