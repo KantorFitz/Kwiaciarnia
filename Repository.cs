@@ -13,14 +13,21 @@ namespace Kwiaciarnia
     {
         public string _connectionString = @"Server=THESHADOWMOSES\SQLEXPRESS;Database=Kwiaciarnia;Trusted_Connection=True;";
 
+        /// <summary>
+        /// Metoda dodaje rekord do bazy
+        /// </summary>
+        /// <param name="flower">
+        /// Obiekt będący nośnikiem rekordu
+        /// </param>
+        /// <returns></returns>
         public bool AddFlower(Flowers flower)
         {
             try
             {
-                using (IDbConnection db = new SqlConnection(_connectionString))
+                using (var db = new SqlConnection(_connectionString))
                 {
-                    string insertQuery = @"INSERT INTO Flowers (Name, SpeciesId, PlaceId, SortId, RequirementsId, TraitId)
-                                            VALUES (@Name, @SpeciesID, @PlaceId, @SortId, @RequirementsId, @TraitId)";
+                    string insertQuery = "INSERT INTO Flowers(Name, SpeciesId, PlaceId, SortId, TraitId, RequirementsId) " +
+                                            @"VALUES(@Name, @SpecieId, @PlaceId, @SortId, @TraitId, @RequirementId)";
 
                     db.Execute(insertQuery, new
                     {
@@ -28,17 +35,43 @@ namespace Kwiaciarnia
                         flower.SpecieId,
                         flower.PlaceId,
                         flower.SortId,
-                        flower.RequirementId,
-                        flower.TraitId
+                        flower.TraitId,
+                        flower.RequirementId
                     });
                     return true;
                 }
-
-
             }
             catch (Exception e)
             {
-                return false;
+                throw;
+            }
+        }
+
+        public bool EditFlower(Flowers flower)
+        {
+            try
+            {
+                using (var db = new SqlConnection(_connectionString))
+                {
+                    string insertQuery = "UPDATE Flower SET Name = @Name, SpeciesId = @SpecieId, PlaceId = @PlaceId, SortId = @SortId, TraitId = @TraitId, RequirementId = @RequirementId WHERE Id = @FlowerId";
+
+                    db.Execute(insertQuery, new
+                    {
+                        flower.Name,
+                        flower.SpecieId,
+                        flower.PlaceId,
+                        flower.SortId,
+                        flower.TraitId,
+                        flower.RequirementId,
+                        flower.FlowerId
+                    });
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 

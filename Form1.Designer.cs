@@ -159,7 +159,7 @@ namespace Kwiaciarnia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1231, 623);
+            this.ClientSize = new System.Drawing.Size(319, 370);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTrait);
             this.Controls.Add(this.txtFlowerName);
