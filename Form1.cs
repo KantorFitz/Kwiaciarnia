@@ -70,7 +70,8 @@ namespace Kwiaciarnia
             using (SqlConnection sqlCon = new SqlConnection(@"Server=THESHADOWMOSES\SQLEXPRESS;Database=Kwiaciarnia;Trusted_Connection=True;"))
             {
                 sqlCon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM Flowers", sqlCon);
+                SqlDataAdapter sqlDa = new SqlDataAdapter(
+                    "SELECT Flowers.FlowerId Lp, flowers.Name NAzwa, species.Name Gatunki, Places.Name Stanowiska, sorts.name Pokroju, Requirements.name Wymagania, Traits.Name Cechy FROM Flowers inner join Species on species.SpeciesId = flowers.SpeciesId inner join places on places.PlaceId = flowers.PlaceId inner join Sorts on Sorts.SortId = flowers.SortId inner join Requirements on Requirements.RequirementId = flowers.RequirementsId inner join Traits on Traits.TraitId = flowers.TraitId",  sqlCon);
                 DataTable dtbl = new DataTable();
                 sqlDa.Fill(dtbl);
 
